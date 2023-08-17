@@ -1,0 +1,50 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Estamos para ayudarte</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Cuidado Profesional, Compasión y Confort</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <h2>Dejenos su solicitud y nos contactaremos con usted</h2>
+    <form action="{% url 'contratacion' %}" method="post" style="padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fafafa;">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">
+            <label for="nombre">Nombre:</label>
+            {{ form.nombre }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="direccion">Direccion:</label>
+            {{ form.direccion }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="telefono">Telefono:</label>
+            {{ form.telefono }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="correo">Correo:</label>
+            {{ form.correo }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="servicio">Servicio:</label>
+            {{ form.servicio }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="fecha">Fecha requerida:</label>
+            {{ form.fecha }}
+            <small>Por favor, ingrese la fecha en el formato "dd/mm/aaaa" (por ejemplo, 25/01/2024).</small>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="contratacion">Comentarios para la contratación:</label>
+            {{ form.contratacion }}
+        </div>
+        <input type="submit" value="Enviar" style="background-color: #f9a825; border: none; padding: 10px 20px; color: #fff; border-radius: 5px;">
+    </form>    
+{% endblock contenido1 %}
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+

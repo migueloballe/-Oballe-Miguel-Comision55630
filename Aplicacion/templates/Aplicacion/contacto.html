@@ -1,0 +1,35 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Estamos para ayudarte</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Tu Salud, Nuestra Pasión: Cuidado Profesional a Tu Alcance.</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <div class="row gx-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+            <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'Aplicacion/assets/img/55.jpg' %}" alt="..." /></div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <div class="p-5">
+                <h2 class="display-4">Cuidado Personalizado, Corazón Compasivo</h2>
+                <p>Nos enorgullecemos de ofrecer atención médica de la más alta calidad. No dudes en ponerte en contacto con nosotros para cualquier consulta o información adicional.</p>
+                <address>
+                    <strong>Dirección:</strong> Calle Salud 123, Ciudad Medica, Argentina<br>
+                    <strong>Teléfono:</strong> +54 123-456-7890<br>
+                    <strong>Correo Electrónico:</strong> <a href="mailto:info@manic.com">info@manic.com</a><br>
+                    <strong>Horario de Atención:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM
+                </address>
+            </div>
+        </div>
+    </div>
+{% endblock contenido1 %}
+
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+{% block parrafo1 %}{% endblock parrafo1 %}
