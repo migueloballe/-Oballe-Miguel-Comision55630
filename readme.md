@@ -52,8 +52,9 @@ python manage.py runserver
 ```
 
 Cómo Usar:
-Regístrate como usuario. Para testear se da brinda el usuario: miguelangel / contraseña: hola123*
-Acceso al portal de administración provisto por django: 127.0.0.1/admin : usuario: admin , contraseña:admin
+* Regístrate como usuario.
+* Para testear se da brinda el usuario: miguelangel / contraseña: hola123*
+* Acceso al portal de administración provisto por django: "127.0.0.1/admin" : usuario: admin , contraseña:admin
 
 Inicia sesión.
 Navega por las distintas opciones disponibles en el menú.
