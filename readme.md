@@ -37,13 +37,19 @@ Cómo Instalar :
 Clona el repositorio.
 
 Instala las dependencias: 
+```
 pip install -r requirements.txt
+```
 
 Realiza las migraciones:
+```
 python manage.py migrate
+```
 
 Ejecuta el servidor:
+```
 python manage.py runserver
+```
 
 Cómo Usar:
 Regístrate como usuario. Para testear se da brinda el usuario: miguelangel / contraseña: hola123*
