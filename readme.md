@@ -4,11 +4,11 @@ Descripción
 Este es un proyecto Django que ayuda en la gestión de contratos y servicios de salud. Incluye funcionalidades para manejar pacientes, enfermeros, y distintos servicios ofrecidos. 
 
 Modelos
-Persona: Representa a cualquier cliente en el sistema. 
-Servicio: Detalla un servicio médico o tratamiento que se ofrece.
-Enfermero: Subclase de Persona que agrega detalles específicos sobre enfermeros.
-Contrato: Asocia un paciente con un servicio y un enfermero.
-Avatar: Almacena imágenes de perfil para los usuarios.
+* Persona: Representa a cualquier cliente en el sistema. 
+* Servicio: Detalla un servicio médico o tratamiento que se ofrece.
+* Enfermero: Subclase de Persona que agrega detalles específicos sobre enfermeros.
+* Contrato: Asocia un paciente con un servicio y un enfermero.
+* Avatar: Almacena imágenes de perfil para los usuarios.
 
 Vistas
 home: Página de inicio.
