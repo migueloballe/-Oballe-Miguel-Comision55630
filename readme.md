@@ -22,16 +22,16 @@ login_request: Maneja la autenticación de usuario.
 editarPerfilYAvatar: Permite al usuario editar su perfil y avatar.
 
 URL Patterns
-*/: Home.
-*/servicios/: Lista de servicios.
-*/contratacion/: Formulario de contratación.
-*/contacto/: Página de contacto.
-*/registro/: Página de registro.
-*/enfermero/: Página para agregar un nuevo enfermero.
-*/login/: Página de login.
-*/logout/: Página de logout.
-*/editar_perfil/: Página para editar perfil y avatar.
-*(entre otros relacionados con operaciones CRUD para contratos, personas, enfermeros y servicios)
+* /: Home.
+* /servicios/: Lista de servicios.
+* /contratacion/: Formulario de contratación.
+* /contacto/: Página de contacto.
+* /registro/: Página de registro.
+* /enfermero/: Página para agregar un nuevo enfermero.
+* /login/: Página de login.
+* /logout/: Página de logout.
+* /editar_perfil/: Página para editar perfil y avatar.
+* (entre otros relacionados con operaciones CRUD para contratos, personas, enfermeros y servicios)
 
 Cómo Instalar : 
 Clona el repositorio.
