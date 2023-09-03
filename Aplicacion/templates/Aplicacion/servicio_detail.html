@@ -1,0 +1,41 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Servicios</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Detalle de Servicios</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ object.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Duración</th>
+                <td>{{ object.duracion }}</td>
+            </tr>
+            <tr>
+                <th>Valor</th>
+                <td>{{ object.costo }}</td>
+            </tr>
+            <tr>
+                <th>Descripción</th>
+                <td>{{ object.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Comentarios</th>
+                <td>{{ object.otros_detalles }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+{% block subheading2 %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'servicio_list' %}">Volver</a>{% endblock subheading2 %}

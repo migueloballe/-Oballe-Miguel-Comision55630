@@ -11,40 +11,39 @@
 
 {% block contenido1 %}
     <h2>Dejenos su solicitud y nos contactaremos con usted</h2>
-    <form action="{% url 'contratacion' %}" method="post" style="padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fafafa;">
+    <form action="{% url 'contratacion' %}" method="post" style="padding: 30px; border: 2px solid #ccc; border-radius: 10px; background-color: #f5f5f5; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
         {% csrf_token %}
-        <div style="margin-bottom: 15px;">
-            <label for="nombre">Nombre:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="nombre" style="font-size: 1.2em;">Nombre:</label>
             {{ form.nombre }}
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="direccion">Direccion:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="direccion" style="font-size: 1.2em;">Direccion:</label>
             {{ form.direccion }}
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="telefono">Telefono:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="telefono" style="font-size: 1.2em;">Telefono:</label>
             {{ form.telefono }}
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="correo">Correo:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="correo" style="font-size: 1.2em;">Correo:</label>
             {{ form.correo }}
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="servicio">Servicio:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="servicio" style="font-size: 1.2em;">Servicio:</label>
             {{ form.servicio }}
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="fecha">Fecha requerida:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="fecha" style="font-size: 1.2em;">Fecha requerida:</label>
             {{ form.fecha }}
             <small>Por favor, ingrese la fecha en el formato "dd/mm/aaaa" (por ejemplo, 25/01/2024).</small>
         </div>
-        <div style="margin-bottom: 15px;">
-            <label for="contratacion">Comentarios para la contratación:</label>
+        <div style="margin-bottom: 25px;">
+            <label for="contratacion" style="font-size: 1.2em;">Comentarios para la contratación:</label>
             {{ form.contratacion }}
         </div>
-        <input type="submit" value="Enviar" style="background-color: #f9a825; border: none; padding: 10px 20px; color: #fff; border-radius: 5px;">
+        <input type="submit" value="Enviar" style="background-color: #4CAF50; border: none; padding: 15px 32px; color: #fff; border-radius: 5px; font-size: 1.2em;">
     </form>    
 {% endblock contenido1 %}
 {% block contenido2 %}{% endblock contenido2 %}
 {% block contenido3 %}{% endblock contenido3 %}
-

@@ -1,0 +1,45 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Servicios</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Detalle del Contrato</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Paciente</th>
+            <td>{{ object.paciente }}</td>
+        </tr>
+        <tr>
+            <th>Servicio</th>
+            <td>{{ object.servicio }}</td>
+        </tr>
+        <tr>
+            <th>Especialista</th>
+            <td>
+                {% if object.especialista %}
+                    {{ object.especialista }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Fecha</th>
+            <td>{{ object.fecha }}</td>
+        </tr>
+        <tr>
+            <th>Condiciones</th>
+            <td>{{ object.condiciones }}</td>
+        </tr>
+    </table>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+{% block subheading2 %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'contrato_list' %}">Volver</a>{% endblock subheading2 %}

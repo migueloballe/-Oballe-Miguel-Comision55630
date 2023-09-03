@@ -1,0 +1,59 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Clientes</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">ABM de Clientes</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+
+<table>
+    <tr>
+        <td width="200"><h2>Clientes</h2></td>
+        <td>
+            <a
+            href="{% url 'persona_new' %}"  
+            class="btn btn-primary btn-sm"
+            ><i class="fa-solid fa-person" style="font-size:24px;" ></i> <i class="fa fa-plus fa-lg"  style="font-size:24px;" title="New Record"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in object_list %}
+                <tr>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.correo }}</td>
+                    <td>
+                        <a href="{% url 'persona_detail' persona.id %}" class="btn btn-primary btn-sm">
+                            <i class="fa-solid fa-eye" title="Detalle"></i>
+                        </a>
+                        <a href="{% url 'persona_edit' persona.id %}" class="btn btn-primary btn-sm">
+                            <i class="fa fa-edit fa-sm" title="Editar"></i>
+                        </a>
+                        <a href="{% url 'persona_delete' persona.id %}" class="btn btn-danger btn-sm">
+                            <i class="fa-solid fa-trash" title="Eliminar"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}

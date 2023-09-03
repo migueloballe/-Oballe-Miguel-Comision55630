@@ -1,0 +1,60 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Contratos</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Gestión de Contratos</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+<table>
+    <tr>
+        <td width="200"><h2>Contratos</h2></td>
+        <td>
+            <a
+            href="{% url 'contrato_new' %}"  
+            class="btn btn-primary btn-sm"
+            ><i class="fa-solid fa-file-contract" style="font-size:24px;" ></i> <i class="fa fa-plus fa-lg"  style="font-size:24px;" title="New Record"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Paciente</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for contrato in object_list %}
+        <tr>
+            <td>{{ contrato.servicio }}</td>
+            <td>{{ contrato.fecha }}</td>
+            <td>{{ contrato.paciente }}</td>
+            <td>
+                <a href="{% url 'contrato_detail' contrato.id %}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-eye" title="Detalle"></i>
+                </a>
+                <a href="{% url 'contrato_edit' contrato.id %}" class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit fa-sm" title="Editar"></i>
+                </a>
+                <a href="{% url 'contrato_delete' contrato.id %}" class="btn btn-danger btn-sm">
+                    <i class="fa-solid fa-trash" title="Eliminar"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+{% block subheading2 %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'contrato_list' %}">Volver</a>{% endblock subheading2 %}

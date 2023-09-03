@@ -1,0 +1,74 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+<h1 class="masthead-heading mb-0">Únete como Coordinador</h1>
+{% endblock heading %}
+
+{% block subheading %}
+<h2 class="masthead-subheading mb-0">Coordina, Supervisa y Selecciona a los Mejores Profesionales</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <div class="registro-container">
+        <h2>Formulario de Registro</h2>
+        <form action="" method="post" class="registro-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {% for field in form %}
+                    <div class="field-wrapper">
+                        <label for="{{ field.id_for_label }}" class="control-label">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="alert alert-danger">
+                                {{ field.errors.0 }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        </form>
+    </div>
+    <style>
+        .registro-container {
+            border: 2px solid #ccc;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 12px 1px #00000033;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .registro-form {
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .field-wrapper {
+            margin-bottom: 20px;
+        }
+        .control-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn-primary {
+            padding: 12px 20px;
+            font-size: 18px;
+        }
+    </style>
+{% endblock contenido1 %}
+
+
+{% block contenido2 %}
+{% endblock contenido2 %}
+
+{% block contenido3 %}
+{% endblock contenido3 %}

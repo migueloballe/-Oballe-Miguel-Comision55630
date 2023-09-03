@@ -20,15 +20,45 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container px-5">
+                {% if user.is_authenticated %}
+                <div class="text-center">
+                    <img src="{{ request.session.avatar }}" height="50px" weight="50px"/>
+                </div>
+                <p style="color:rgb(236, 245, 236)">¡Bienvenido {{user.username}}!</p>
                 <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'contacto' %}">Contacto</a>
+                <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
+                
+                {% else %} 
+                <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'login' %}">Login</a>
+                <a class="navbar-brand" href="{% url 'contacto' %}">Acerca de Mi</a>
+                {% endif %}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'servicios' %}">Nuestros Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'contratacion' %}">Contratar Servicio</a></li>
+                
+
+                <div id="navbarResponsive">
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            
+                            <div style="display: flex; align-items: center;">     
+                                <a class="navbar-brand" style="margin-right: 30px;" href="{% url 'editar_perfil' %}">Perfil</a>         
+                                <a class="navbar-brand" href="{% url 'servicio_list' %}">Edicion Servicios</a>
+                                <a class="navbar-brand" href="{% url 'enfermero_list' %}">Edicion Enfermeros</a>
+                                <a class="navbar-brand" href="{% url 'persona_list' %}">Edicion de Clientes</a>
+                                <a class="navbar-brand" href="{% url 'contrato_list' %}">Edicion de Contratos</a>
+                            </div>
+                        </li>
+                        {% else %}
+                            <a class="navbar-brand" href="{% url 'servicios' %}">Nuestros Servicios</a></li>
+                            <a class="navbar-brand" href="{% url 'contratacion' %}">Contratar Servicio</a></li>
+                            <a class="navbar-brand" href="{% url 'nuevo_enfermero' %}">Trabaja con Nosotros</a></li>
+                            <a class="navbar-brand" href="{% url 'registro' %}">Registrate</a></li>
+                        {% endif %}
                     </ul>
                 </div>
+                
+                
             </div>
         </nav>
         <!-- Header-->
@@ -41,7 +71,9 @@
                     {% block subheading %}
                     <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
                     {% endblock subheading %}
+                    {% block subheading2 %}
                     <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                    {% endblock subheading2 %}
                 </div>
             </div>
             <div class="bg-circle-1 bg-circle"></div>
@@ -118,11 +150,12 @@
             </div>
         </section>
 
-
+        {% block contenido4 %}
         <!-- Footer-->
         <footer class="py-5 bg-black">
             <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2023</p></div>
         </footer>
+        {% endblock contenido4 %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

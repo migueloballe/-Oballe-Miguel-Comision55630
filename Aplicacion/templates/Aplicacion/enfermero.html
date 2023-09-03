@@ -1,0 +1,46 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Únete a Nuestra Red de Profesionales</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Cree Oportunidades en el Ámbito del Cuidado de la Salud</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+    <h2>Formulario de Registro para Enfermeros</h2>
+    <p>Si eres un enfermero certificado y estás buscando nuevas oportunidades laborales, completa este formulario para ser considerado en nuestra bolsa de trabajo y futuras solicitudes de servicios médicos a domicilio.</p>
+    <form action="{% url 'nuevo_enfermero' %}" method="post" style="padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fafafa;">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">
+            <label for="nombre">Nombre:</label>
+            {{ form.nombre }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="direccion">Direccion:</label>
+            {{ form.direccion }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="telefono">Telefono:</label>
+            {{ form.telefono }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="correo">Correo:</label>
+            {{ form.correo }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="especialidad">Especialidad:</label>
+            {{ form.especialidad }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="especialidad">Matricula:</label>
+            {{ form.matricula }}
+        </div>
+        <input type="submit" value="Enviar" style="background-color: #f9a825; border: none; padding: 10px 20px; color: #fff; border-radius: 5px;">
+    </form>    
+{% endblock contenido1 %}
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+

@@ -1,0 +1,31 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Servicios</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Creación de Nuevos Servicios</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+<form method="post" class="form-horizontal">
+    {% csrf_token %}
+    <table class="table table-bordered">
+        <tbody>
+            {% for field in form %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>{{ field }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Guardar</button>
+</form>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
+{% block subheading2 %}<a class="btn btn-primary btn-xl rounded-pill mt-5" href="{% url 'servicio_list' %}">Volver</a>{% endblock subheading2 %}

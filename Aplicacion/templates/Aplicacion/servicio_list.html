@@ -1,0 +1,58 @@
+{% extends 'Aplicacion/base.html' %}
+{% load static %}
+
+{% block heading %}
+    <h1 class="masthead-heading mb-0">Nuestros Servicios</h1>
+{% endblock heading %}
+
+{% block subheading %}
+    <h2 class="masthead-subheading mb-0">Gestión de Servicios</h2>
+{% endblock subheading %}
+
+{% block contenido1 %}
+<table>
+    <tr>
+        <td width="200"><h2>Servicios</h2></td>
+        <td>
+            <a
+            href="{% url 'servicio_new' %}"  
+            class="btn btn-primary btn-sm"
+            ><i class="fa-solid fa-hospital" style="font-size:24px;"></i><i class="fa fa-plus fa-lg" style="font-size:24px;" title="New Record"> </i>
+            </a>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre del Servicio</th>
+            <th>Costo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for servicio in object_list %}
+        <tr>
+            <td>{{ servicio.nombre }}</td>
+            <td>{{ servicio.costo }}</td>
+            <td>
+                <a href="{% url 'servicio_detail' servicio.id %}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-eye" title="Detalle"></i>
+                </a>
+                <a href="{% url 'servicio_edit' servicio.id %}" class="btn btn-primary btn-sm">
+                    <i class="fa fa-edit fa-sm" title="Editar"></i>
+                </a>
+                <a href="{% url 'servicio_delete' servicio.id %}" class="btn btn-danger btn-sm">
+                    <i class="fa-solid fa-trash" title="Eliminar"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido1 %}
+
+{% block contenido2 %}{% endblock contenido2 %}
+{% block contenido3 %}{% endblock contenido3 %}
