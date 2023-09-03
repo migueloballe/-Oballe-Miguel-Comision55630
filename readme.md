@@ -55,6 +55,7 @@ Cómo Usar:
 * Regístrate como usuario.
 * Para testear se da brinda el usuario: miguelangel / contraseña: hola123*
 * Acceso al portal de administración provisto por django: "127.0.0.1/admin" : usuario: admin , contraseña:admin
+* Video de referencia de uso de la web : https://www.youtube.com/watch?v=lVp6rZZIu1c&ab_channel=Miguel%C3%81ngel 
 
 Inicia sesión.
 Navega por las distintas opciones disponibles en el menú.
